@@ -3,6 +3,9 @@ using System.Web.Mvc;
 
 namespace Md.Web.UI
 {
+    /// <summary>
+    /// Extensions for dates in UI
+    /// </summary>
     public static class DateExtensions
     {
         public static List<SelectListItem> AllMonths(this HtmlHelper helper)
