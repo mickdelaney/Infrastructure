@@ -2,15 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Md.Infrastructure.Data.NHibernate;
 using Md.Infrastructure.Domain;
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
-using Expression=System.Linq.Expressions.Expression;
+using Expression = System.Linq.Expressions.Expression;
 
-namespace Md.Infrastructure.Data.NHibernate
+namespace Md.Infrastructure.Db.NHibernate
 {
-    public abstract class RepositoryBase<T> : IRepository<T> where T : EntityBase<T>
+    public abstract class RepositoryBase<T> : IRepository<T> where T : IIdentifiable
     {
         private readonly ISession _session;
         protected ISession Session { get { return _session; } }

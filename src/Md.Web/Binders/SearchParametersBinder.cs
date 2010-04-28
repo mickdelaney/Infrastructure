@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Md.Infrastructure.Clr;
 using Md.Infrastructure.Data;
+using Md.Infrastructure.Data.Extensions;
 
 namespace Md.Web.Search
 {

@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using Md.Infrastructure.Domain;
 
-namespace Md.Infrastructure.Data
+namespace Md.Infrastructure.Db
 {
-    public interface IRepository<T> : IQueryable<T> where T : EntityBase<T>
+    public interface IRepository<T> : IQueryable<T> where T : IIdentifiable
     {
         T Save(T entity);
     }

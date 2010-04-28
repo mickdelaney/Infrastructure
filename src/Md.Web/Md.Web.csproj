@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libs\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\SolrNet.dll</HintPath>
@@ -43,12 +47,16 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -61,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binders\MonthRangeBinder.cs" />
+    <Compile Include="Routing\NamespacedRoute.cs" />
+    <Compile Include="Search\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Search\Extensions\UrlHelperFacetExtensions.cs" />
+    <Compile Include="Search\Extensions\UrlSearchExtensions.cs" />
     <Compile Include="Search\SearchConnection.cs" />
     <Compile Include="Search\SearchParameters.cs" />
     <Compile Include="Binders\SearchParametersBinder.cs" />
@@ -71,6 +83,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\oss\SolrNet\SolrNet.DSL\SolrNet.DSL.csproj">
+      <Project>{385E2EC3-885B-43D5-A86B-955692058BA0}</Project>
+      <Name>SolrNet.DSL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Md.Infrastructure\Md.Infrastructure.csproj">
       <Project>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</Project>
       <Name>Md.Infrastructure</Name>

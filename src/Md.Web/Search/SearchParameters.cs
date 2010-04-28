@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using SolrNet;
+using SolrNet.DSL;
 
 namespace Md.Web.Search
 {
@@ -33,6 +36,38 @@ namespace Md.Web.Search
             {
                 return FirstItemIndex + PageSize;
             }
+        }
+
+        /// <summary>
+        /// Builds the Solr query from the search parameters
+        /// </summary>
+        /// <returns></returns>
+        public ISolrQuery SolrQuery()
+        {
+            if (!string.IsNullOrEmpty(FreeSearch))
+                return new SolrQuery(FreeSearch);
+            return SolrNet.SolrQuery.All;
+        }
+
+        public ICollection<ISolrQuery> FilterQueries()
+        {
+            var queriesFromFacets = from p in Facets
+                                    select (ISolrQuery)Query.Field(p.Key).Is(p.Value);
+            return queriesFromFacets.ToList();
+        }
+
+        /// <summary>
+        /// Gets the selected facet fields
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<string> SelectedFacetFields()
+        {
+            return Facets.Select(f => f.Key);
+        }
+
+        public SortOrder[] GetSelectedSort()
+        {
+            return new[] { SortOrder.Parse(Sort) }.Where(o => o != null).ToArray();
         }
     }
 }

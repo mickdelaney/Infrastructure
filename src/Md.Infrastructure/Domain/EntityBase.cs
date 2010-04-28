@@ -9,11 +9,16 @@ namespace Md.Infrastructure.Domain
     /// 
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public abstract class EntityBase<TEntity> where TEntity : EntityBase<TEntity>
+    public abstract class EntityBase<TEntity> : IIdentifiable where TEntity : EntityBase<TEntity>
     {
         public virtual Guid Id { get; set; }
         private int? _oldHashCode;
 
+        public virtual Guid Identifier()
+        {
+            return Id;
+        }
+        
         /// <summary>
         /// /
         /// </summary>
