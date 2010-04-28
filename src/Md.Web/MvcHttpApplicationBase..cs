@@ -21,7 +21,6 @@ namespace Md.Web
             get { return Container; }
         }
 
-        public static IBus Bus { get; private set; }
-
+        public static IBus Bus { get; set; }
     }
 }
