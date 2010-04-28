@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Md.Infrastructure.Clr;
 using Md.Infrastructure.Data;
 using Md.Infrastructure.Data.Extensions;
 
-namespace Md.Web.Search
+namespace Md.Web.Solr.Binders
 {
     public class SearchParametersBinder : IModelBinder
     {
