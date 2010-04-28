@@ -37,11 +37,7 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\libs\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="SolrNet, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\SolrNet.dll</HintPath>
+      <HintPath>..\..\libs\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -86,6 +82,10 @@
     <ProjectReference Include="..\..\..\..\..\..\oss\SolrNet\SolrNet.DSL\SolrNet.DSL.csproj">
       <Project>{385E2EC3-885B-43D5-A86B-955692058BA0}</Project>
       <Name>SolrNet.DSL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\oss\SolrNet\SolrNet\SolrNet.csproj">
+      <Project>{CEEB8690-3E08-4440-B647-787A58E71CFA}</Project>
+      <Name>SolrNet %28vendor\solrnet\SolrNet%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Md.Infrastructure\Md.Infrastructure.csproj">
       <Project>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</Project>
