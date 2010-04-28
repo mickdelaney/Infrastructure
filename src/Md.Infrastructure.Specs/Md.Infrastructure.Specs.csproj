@@ -35,6 +35,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Machine.Specifications.dll</HintPath>
     </Reference>
+    <Reference Include="Moq, Version=4.0.423.5, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq.Contrib, Version=0.1.3770.37874, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Moq.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -51,11 +59,12 @@
   <ItemGroup>
     <Compile Include="Data\GeneratorSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecificationFor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\spec.unit\Elevate.Spec.Unit.csproj">
-      <Project>{044E23FE-7FB1-4072-B4F5-9071B9F4E9EE}</Project>
-      <Name>Elevate.Spec.Unit</Name>
+    <ProjectReference Include="..\Md.Infrastructure\Md.Infrastructure.csproj">
+      <Project>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</Project>
+      <Name>Md.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

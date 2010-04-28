@@ -4,6 +4,16 @@
         <name>Moq.Contrib</name>
     </assembly>
     <members>
+        <member name="T:Moq.Mvc.HttpRequestMock">
+            <summary>
+            Mock the complete HttpRequestBase object hierarchy
+            </summary>
+        </member>
+        <member name="M:Moq.Mvc.HttpRequestMock.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
         <member name="T:Moq.AutoMockContainer">
             <summary>
             Auto-mocking factory that can create an instance of the 
@@ -93,12 +103,37 @@
             True if the registration could be created.
             </returns>
         </member>
-        <member name="T:Moq.Mvc.HttpApplicationStateMock">
+        <member name="T:Moq.Mvc.HttpResponseMock">
             <summary>
-            Mock the complete HttpApplicationState object hierarchy
+            Mock the complete HttpResponseBase object hierarchy
             </summary>
         </member>
-        <member name="T:Moq.Mvc.HttpCachePolicyBaseMock">
+        <member name="M:Moq.Mvc.HttpResponseMock.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moq.Mvc.HttpResponseMock.VerifyResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moq.Mvc.HttpResponseMock.VerifyResponseAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moq.Mvc.HttpResponseMock.Cache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moq.Mvc.HttpResponseMock.Output">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moq.Mvc.HttpResponseMock.OutputStream">
             <summary>
             
             </summary>
@@ -148,59 +183,14 @@
             
             </summary>
         </member>
-        <member name="T:Moq.Mvc.HttpRequestMock">
-            <summary>
-            Mock the complete HttpRequestBase object hierarchy
-            </summary>
-        </member>
-        <member name="M:Moq.Mvc.HttpRequestMock.#ctor">
-            <summary>
-            Default Constructor
-            </summary>
-        </member>
-        <member name="T:Moq.Mvc.HttpResponseMock">
-            <summary>
-            Mock the complete HttpResponseBase object hierarchy
-            </summary>
-        </member>
-        <member name="M:Moq.Mvc.HttpResponseMock.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Moq.Mvc.HttpResponseMock.VerifyResponse">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Moq.Mvc.HttpResponseMock.VerifyResponseAll">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Moq.Mvc.HttpResponseMock.Cache">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Moq.Mvc.HttpResponseMock.Output">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Moq.Mvc.HttpResponseMock.OutputStream">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:Moq.Mvc.HttpServerUtilityMock">
             <summary>
             Mock the complete HttpServerUtilityBase object hierarchy
             </summary>
         </member>
-        <member name="T:Moq.Mvc.HttpSessionStateMock">
+        <member name="T:Moq.Mvc.HttpApplicationStateMock">
             <summary>
-            Mock the complete HttpSessionStateBase object hierarchy
+            Mock the complete HttpApplicationState object hierarchy
             </summary>
         </member>
         <member name="T:ThisAssembly">
@@ -210,6 +200,16 @@
             <group name="verification" title="Verifying Setupations" order="3" />
             <group name="advanced" title="Advanced scenarios" order="99" />
             <group name="factory" title="Using MockFactory for consistency across mocks" order="4" />
+        </member>
+        <member name="T:Moq.Mvc.HttpSessionStateMock">
+            <summary>
+            Mock the complete HttpSessionStateBase object hierarchy
+            </summary>
+        </member>
+        <member name="T:Moq.Mvc.HttpCachePolicyBaseMock">
+            <summary>
+            
+            </summary>
         </member>
     </members>
 </doc>

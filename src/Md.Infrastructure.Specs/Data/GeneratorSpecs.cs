@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using elevate.spec.unit;
 using Machine.Specifications;
-using Machine.Specifications.Model;
 using Md.Infrastructure.Data;
 
-namespace Md.Infrastructure.Specs
+namespace Md.Infrastructure.Specs.Data
 {
     [Subject(typeof(Random))]
     public class when_a_random_list_is_created : SpecificationFor<Generate>
