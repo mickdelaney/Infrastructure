@@ -8,5 +8,9 @@ namespace Md.Infrastructure.Mvc
 {
     public class MdControllerBase : Controller
     {
+
+
+        //asdasd
     }
+
 }
