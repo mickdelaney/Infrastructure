@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5580339F-F0A9-4BAA-857F-A6D070B9C03E}</ProjectGuid>
+    <ProjectGuid>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Md.Web</RootNamespace>
-    <AssemblyName>Md.Web</AssemblyName>
+    <RootNamespace>Md.Infrastructure</RootNamespace>
+    <AssemblyName>Md.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -31,7 +31,10 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+<<<<<<< HEAD
+=======
     <TargetFrameworkProfile />
+>>>>>>> remotes/origin/master
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +44,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,15 +53,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="Castle.MicroKernel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -67,9 +68,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+    <Reference Include="FluentDateTime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6ccbc613702e6c71, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\log4net.dll</HintPath>
+      <HintPath>..\..\libs\FluentDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -79,13 +84,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.1.0.1001, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\NHibernate.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="NServiceBus, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
@@ -95,11 +104,10 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\System.Web.Mvc.dll</HintPath>
@@ -117,39 +125,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binders\MonthRangeBinder.cs" />
-    <Compile Include="Config\Windsor\WebInstaller.cs" />
-    <Compile Include="Extensions\CastleExtensions.cs" />
-    <Compile Include="MvcHttpApplicationBase..cs" />
-    <Compile Include="Mvc\Extensions\ControllerExtensions.cs" />
-    <Compile Include="Mvc\Extensions\TempDataExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\ImageExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\LabelExtensions.cs" />
-    <Compile Include="Mvc\Keys.cs" />
-    <Compile Include="Mvc\MdControllerBase.cs" />
-    <Compile Include="Mvc\NamespacedControllerFactory.cs" />
-    <Compile Include="Mvc\Security\FormsAuthenticationService.cs" />
-    <Compile Include="Mvc\Security\IFormsAuthenticationService.cs" />
-    <Compile Include="Mvc\TempDataMessage.cs" />
-    <Compile Include="Mvc\Transactions\ExecuteInTransaction.cs" />
-    <Compile Include="Mvc\Transactions\UnitOfWorkModule.cs" />
-    <Compile Include="Mvc\Validation\PropertiesMustMatchAttribute.cs" />
-    <Compile Include="Mvc\Validation\ValidatePasswordLengthAttribute.cs" />
-    <Compile Include="Mvc\Views\Form.cs" />
-    <Compile Include="Mvc\Windsor\NamespacedControllersInstaller.cs" />
-    <Compile Include="Mvc\Windsor\WindsorActionInvoker.cs" />
-    <Compile Include="Routing\NamespacedRoute.cs" />
-    <Compile Include="UI\DateExtensions.cs" />
+    <Compile Include="Audit\AuditedEntityBase.cs" />
+    <Compile Include="Audit\AuditEventListener.cs" />
+    <Compile Include="Clr\DateUtilities.cs" />
+    <Compile Include="Clr\Extensions\ObjectFormattingExtensions.cs" />
+    <Compile Include="Clr\Extensions\StringExtensions.cs" />
+    <Compile Include="Clr\MonthRange.cs" />
+    <Compile Include="Clr\DayRange.cs" />
+    <Compile Include="Clr\DateRange.cs" />
+    <Compile Include="Clr\Money.cs" />
+    <Compile Include="Clr\StringExtensions.cs" />
+    <Compile Include="Clr\StringHelper.cs" />
+    <Compile Include="Context\TypedKey.cs" />
+    <Compile Include="Cqrs\IHandler.cs" />
+    <Compile Include="Data\CsvExtensions.cs" />
+    <Compile Include="Data\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Data\Generate.cs" />
+    <Compile Include="Data\KeyValuePairExtensions.cs" />
+    <Compile Include="Db\NHibernate\UserTypes\DateRangeUserType.cs" />
+    <Compile Include="Db\IRepository.cs" />
+    <Compile Include="Db\NHibernate\UserTypes\MoneyUserType.cs" />
+    <Compile Include="Db\NHibernate\CompositeUserTypeBase.cs" />
+    <Compile Include="Db\NHibernate\EnhancedBytecodeProvider.cs" />
+    <Compile Include="Db\NHibernate\Mappings\AuditedClassMap.cs" />
+    <Compile Include="Db\NHibernate\Mappings\EntityBaseClassMap.cs" />
+    <Compile Include="Db\NHibernate\Mappings\IdGenerator.cs" />
+    <Compile Include="Db\NHibernate\NHibernateConstants.cs" />
+    <Compile Include="Db\NHibernate\Repository.cs" />
+    <Compile Include="Db\NHibernate\RepositoryHelper.cs" />
+    <Compile Include="Domain\IIdentifiable.cs" />
+    <Compile Include="Expressions\ExpressionVisitor.cs" />
+    <Compile Include="Expressions\MemberAccessPropertyInfoVisitor.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="Db\NHibernate\SessionManager.cs" />
+    <Compile Include="Db\NHibernate\WindsorLightweightReflectionOptimizer.cs" />
+    <Compile Include="Db\NHibernate\WindsorNHibernateObjectsFactory.cs" />
+    <Compile Include="Db\SessionExtensions.cs" />
+    <Compile Include="Db\UnitOfWork.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Search\PaginationInfo.cs" />
+    <Compile Include="Storage\ILocalContext.cs" />
+    <Compile Include="IoC\Windsor\CloseGenericTypesSelector.cs" />
+    <Compile Include="Storage\LocalContext.cs" />
+    <Compile Include="MdConstants.cs" />
+    <Compile Include="Messaging\BaseMessageHandler.cs" />
+    <Compile Include="Messaging\ICommandMessage.cs" />
+    <Compile Include="Messaging\IEventMessage.cs" />
+    <Compile Include="Messaging\IPublisher.cs" />
+    <Compile Include="Nsb\NHibernateMessageModule.cs" />
+    <Compile Include="Nsb\NServiceBusPublisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Md.Infrastructure\Md.Infrastructure.csproj">
-      <Project>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</Project>
-      <Name>Md.Infrastructure</Name>
-    </ProjectReference>
+    <Compile Include="Audit\IHaveAuditInformation.cs" />
+    <Compile Include="Utils\IOHelper.cs" />
+    <Compile Include="IoC\Windsor\WindsorExtensions.cs" />
+    <Compile Include="IoC\Windsor\WindsorServiceLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

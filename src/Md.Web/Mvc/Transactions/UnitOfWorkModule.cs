@@ -3,7 +3,7 @@ using System.Web;
 using Md.Infrastructure.Data;
 using NHibernate;
 
-namespace Md.Infrastructure.Mvc.Transactions
+namespace Md.Web.Mvc.Transactions
 {
     public class UnitOfWorkModule : IHttpModule
     {

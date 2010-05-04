@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,7 +155,6 @@
     <Compile Include="Expressions\ExpressionVisitor.cs" />
     <Compile Include="Expressions\MemberAccessPropertyInfoVisitor.cs" />
     <Compile Include="Guard.cs" />
-    <Compile Include="Mvc\Transactions\UnitOfWorkModule.cs" />
     <Compile Include="Db\NHibernate\SessionManager.cs" />
     <Compile Include="Db\NHibernate\WindsorLightweightReflectionOptimizer.cs" />
     <Compile Include="Db\NHibernate\WindsorNHibernateObjectsFactory.cs" />
@@ -170,22 +170,6 @@
     <Compile Include="Messaging\ICommandMessage.cs" />
     <Compile Include="Messaging\IEventMessage.cs" />
     <Compile Include="Messaging\IPublisher.cs" />
-    <Compile Include="Mvc\Extensions\ControllerExtensions.cs" />
-    <Compile Include="Mvc\Extensions\TempDataExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\ImageExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\LabelExtensions.cs" />
-    <Compile Include="Mvc\Keys.cs" />
-    <Compile Include="Mvc\MdControllerBase.cs" />
-    <Compile Include="Mvc\NamespacedControllerFactory.cs" />
-    <Compile Include="Mvc\Security\FormsAuthenticationService.cs" />
-    <Compile Include="Mvc\Security\IFormsAuthenticationService.cs" />
-    <Compile Include="Mvc\TempDataMessage.cs" />
-    <Compile Include="Mvc\Transactions\ExecuteInTransaction.cs" />
-    <Compile Include="Mvc\Validation\PropertiesMustMatchAttribute.cs" />
-    <Compile Include="Mvc\Validation\ValidatePasswordLengthAttribute.cs" />
-    <Compile Include="Mvc\Views\Form.cs" />
-    <Compile Include="Mvc\Windsor\NamespacedControllersInstaller.cs" />
-    <Compile Include="Mvc\Windsor\WindsorActionInvoker.cs" />
     <Compile Include="Nsb\NHibernateMessageModule.cs" />
     <Compile Include="Nsb\NServiceBusPublisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

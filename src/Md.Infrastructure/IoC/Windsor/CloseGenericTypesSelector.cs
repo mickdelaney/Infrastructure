@@ -15,16 +15,22 @@ namespace Md.Infrastructure.IoC.Windsor
         public IHandler SelectHandler(string key, Type service, IHandler[] handlers)
         {
             return handlers.FirstOrDefault(h => MatchHandler(service, h));
-
         }
 
         private static bool MatchHandler(Type service, IHandler handler)
         {
-            var closingTypeRequired = handler.ComponentModel.Implementation.GetGenericArguments()
-                .Single().GetGenericParameterConstraints().SingleOrDefault();
+            //Get the closing type required.
+            var closingTypeRequired = handler.ComponentModel
+                                             .Implementation.GetGenericArguments()
+                                             .Single()
+                                             .GetGenericParameterConstraints()
+                                             .SingleOrDefault();
+
             if (closingTypeRequired == null)
                 return false;
+
             var closingTypeActual = service.GetGenericArguments().Single();
+
             return closingTypeRequired.IsAssignableFrom(closingTypeActual);
         }
     }

@@ -3,7 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Md.Infrastructure.Mvc.Security;
 
-namespace Md.Infrastructure.Config
+namespace Md.Web.Config.Windsor
 {
     public class WebInstaller : IWindsorInstaller
     {

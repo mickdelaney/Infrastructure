@@ -1,21 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5580339F-F0A9-4BAA-857F-A6D070B9C03E}</ProjectGuid>
+    <ProjectGuid>{AD58B3C1-EC03-4365-B59B-10E2DE3A7D2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Md.Web</RootNamespace>
-    <AssemblyName>Md.Web</AssemblyName>
+    <RootNamespace>Md.Web.Solr</RootNamespace>
+    <AssemblyName>Md.Web.Solr</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+<<<<<<< HEAD
+=======
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,6 +34,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
+>>>>>>> remotes/origin/master
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +44,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,6 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -75,23 +80,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+    <Reference Include="SolrNet, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\NHibernate.dll</HintPath>
+      <HintPath>..\..\libs\SolrNet.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+    <Reference Include="SolrNet.DSL, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\..\libs\SolrNet.DSL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -99,10 +96,9 @@
     <Reference Include="System.Web.Abstractions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\libs\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -117,38 +113,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binders\MonthRangeBinder.cs" />
-    <Compile Include="Config\Windsor\WebInstaller.cs" />
-    <Compile Include="Extensions\CastleExtensions.cs" />
-    <Compile Include="MvcHttpApplicationBase..cs" />
-    <Compile Include="Mvc\Extensions\ControllerExtensions.cs" />
-    <Compile Include="Mvc\Extensions\TempDataExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\ImageExtensions.cs" />
-    <Compile Include="Mvc\Extensions\UI\LabelExtensions.cs" />
-    <Compile Include="Mvc\Keys.cs" />
-    <Compile Include="Mvc\MdControllerBase.cs" />
-    <Compile Include="Mvc\NamespacedControllerFactory.cs" />
-    <Compile Include="Mvc\Security\FormsAuthenticationService.cs" />
-    <Compile Include="Mvc\Security\IFormsAuthenticationService.cs" />
-    <Compile Include="Mvc\TempDataMessage.cs" />
-    <Compile Include="Mvc\Transactions\ExecuteInTransaction.cs" />
-    <Compile Include="Mvc\Transactions\UnitOfWorkModule.cs" />
-    <Compile Include="Mvc\Validation\PropertiesMustMatchAttribute.cs" />
-    <Compile Include="Mvc\Validation\ValidatePasswordLengthAttribute.cs" />
-    <Compile Include="Mvc\Views\Form.cs" />
-    <Compile Include="Mvc\Windsor\NamespacedControllersInstaller.cs" />
-    <Compile Include="Mvc\Windsor\WindsorActionInvoker.cs" />
-    <Compile Include="Routing\NamespacedRoute.cs" />
-    <Compile Include="UI\DateExtensions.cs" />
+    <Compile Include="Binders\SearchParametersBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Extensions\UrlHelperFacetExtensions.cs" />
+    <Compile Include="Extensions\UrlSearchExtensions.cs" />
+    <Compile Include="SearchConnection.cs" />
+    <Compile Include="SearchParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Md.Infrastructure\Md.Infrastructure.csproj">
       <Project>{494B290D-51D9-4473-AD6F-8FE31CC8D319}</Project>
       <Name>Md.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Md.Web\Md.Web.csproj">
+      <Project>{5580339F-F0A9-4BAA-857F-A6D070B9C03E}</Project>
+      <Name>Md.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
