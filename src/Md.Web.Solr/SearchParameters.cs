@@ -3,7 +3,7 @@ using System.Linq;
 using SolrNet;
 using SolrNet.DSL;
 
-namespace Md.Web.Search
+namespace Md.Web.Solr
 {
     public class SearchParameters
     {

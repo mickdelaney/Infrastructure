@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Md.Infrastructure.Clr.Extensions;
 
-namespace Md.Web.Search.Extensions
+namespace Md.Web.Solr.Extensions
 {
     /// <summary>
     /// Query string processing extensions

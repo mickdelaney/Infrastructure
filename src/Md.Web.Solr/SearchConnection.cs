@@ -3,7 +3,7 @@ using System.Linq;
 using log4net;
 using SolrNet;
 
-namespace Md.Web.Search
+namespace Md.Web.Solr
 {
     public class SearchConnection : ISolrConnection
     {

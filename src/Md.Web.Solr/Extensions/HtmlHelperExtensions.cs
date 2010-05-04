@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Microsoft.Practices.ServiceLocation;
 using SolrNet;
 
-namespace Md.Web.Search.Extensions
+namespace Md.Web.Solr.Extensions
 {
     public static class HtmlHelperMapperExtensions
     {
