@@ -26,7 +26,7 @@ namespace Md.Web.Extensions
                         Component.For(type)
                                  .ImplementedBy(type)
                                  .Named(type.FullName.ToLower())
-                                 .LifeStyle.PerWebRequest
+                                 .LifeStyle.Transient
                     );
                 }
             }

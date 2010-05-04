@@ -3,7 +3,7 @@ using Md.Infrastructure.Data;
 using Microsoft.Practices.ServiceLocation;
 using NHibernate;
 
-namespace Md.Infrastructure.Mvc.Transactions
+namespace Md.Web.Mvc.Transactions
 {
     public class ExecuteInTransaction : ActionFilterAttribute
     {

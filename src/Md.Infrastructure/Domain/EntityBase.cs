@@ -80,4 +80,14 @@ namespace Md.Infrastructure.Domain
             return other.Id.Equals(Id);
         }
     }
+
+    public static class EntityBaseQueries
+    {
+        public static T GetByIdentifier<T>(this IQueryable<T> query, Guid id) where T : EntityBase<T>
+        {
+            return query.Where(a => a.Id == id)
+                        .FirstOrDefault();
+        }
+    }
+
 }

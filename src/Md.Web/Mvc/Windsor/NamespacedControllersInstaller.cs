@@ -3,7 +3,7 @@ using Castle.MicroKernel;
 using Castle.Windsor;
 using Md.Web.Extensions;
 
-namespace Md.Infrastructure.Mvc.Windsor
+namespace Md.Web.Mvc.Windsor
 {
     public class NamespacedControllersInstaller : IWindsorInstaller
     {
