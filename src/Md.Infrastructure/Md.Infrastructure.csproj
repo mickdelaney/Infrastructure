@@ -133,6 +133,7 @@
     <Compile Include="Clr\Money.cs" />
     <Compile Include="Clr\StringExtensions.cs" />
     <Compile Include="Clr\StringHelper.cs" />
+    <Compile Include="Collections\RecyclingDictionary.cs" />
     <Compile Include="Context\TypedKey.cs" />
     <Compile Include="Cqrs\IHandler.cs" />
     <Compile Include="Data\CsvExtensions.cs" />

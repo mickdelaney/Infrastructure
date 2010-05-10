@@ -1,4 +1,4 @@
-namespace Md.Infrastructure.Mvc.Security
+namespace Md.Web.Mvc.Security
 {
     public interface IFormsAuthenticationService
     {

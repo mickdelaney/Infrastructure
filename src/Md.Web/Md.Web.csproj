@@ -124,6 +124,8 @@
     <Compile Include="Extensions\CastleExtensions.cs" />
     <Compile Include="MvcHttpApplicationBase..cs" />
     <Compile Include="Mvc\Extensions\ControllerExtensions.cs" />
+    <Compile Include="Mvc\Extensions\RepeatExtensions.cs" />
+    <Compile Include="Mvc\Extensions\SearchExtensions.cs" />
     <Compile Include="Mvc\Extensions\UI\DescriptiveListExtensions.cs" />
     <Compile Include="Mvc\Extensions\UI\DescriptiveListItem.cs" />
     <Compile Include="Mvc\Extensions\UI\ItemDescription.cs" />

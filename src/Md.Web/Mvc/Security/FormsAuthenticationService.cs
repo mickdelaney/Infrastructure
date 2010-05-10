@@ -1,7 +1,7 @@
 using System;
 using System.Web.Security;
 
-namespace Md.Infrastructure.Mvc.Security
+namespace Md.Web.Mvc.Security
 {
     public class FormsAuthenticationService : IFormsAuthenticationService
     {
@@ -10,7 +10,8 @@ namespace Md.Infrastructure.Mvc.Security
             if (String.IsNullOrEmpty(userName)) 
                 throw new ArgumentException("Value cannot be null or empty.", "userName");
 
-            FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+            //FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+            FormsAuthentication.RedirectFromLoginPage(userName, createPersistentCookie);
         }
 
         public void SignOut()

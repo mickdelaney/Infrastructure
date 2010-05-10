@@ -12,16 +12,13 @@ namespace Md.Web.Routing
     {
         private readonly string _areaName;
 
-        public NamespacedRoute(string areaName, string url)
-            : base(url, new MvcRouteHandler())
+        public NamespacedRoute(string areaName, string url) : base(url, new MvcRouteHandler())
         {
             _areaName = areaName;
             Constraints = new RouteValueDictionary();
             Defaults = new RouteValueDictionary();
         }
-
-        public NamespacedRoute(string url)
-            : base(url, new MvcRouteHandler())
+        public NamespacedRoute(string url) : base(url, new MvcRouteHandler())
         {
             Constraints = new RouteValueDictionary();
             Defaults = new RouteValueDictionary();
@@ -79,7 +76,6 @@ namespace Md.Web.Routing
                 { "UseNamespaceFallback", false }
             };
         }
-
         private RouteValueDictionary CreateRouteDefaults(Type controllerType, string actionName)
         {
             string controllerName = controllerType.Name;
@@ -109,7 +105,6 @@ namespace Md.Web.Routing
 
             return this;
         }
-
         public NamespacedRoute WithNamespaceOf<T>()
         {
             var controllerType = typeof(T);

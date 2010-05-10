@@ -1,7 +1,7 @@
 ﻿using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using Md.Infrastructure.Mvc.Security;
+using Md.Web.Mvc.Security;
 
 namespace Md.Web.Config.Windsor
 {
