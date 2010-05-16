@@ -19,5 +19,11 @@ namespace Md.Infrastructure.Data
             var rnd = new Random();
             return Enumerable.Range(min, max).OrderBy(r => rnd.Next()).First();
         }
+
+        public List<int> RandomNumbersBetween(int min, int max, int numberOfItems)
+        {
+            var rnd = new Random();
+            return Enumerable.Range(min, max).OrderBy(r => rnd.Next()).Take(numberOfItems).ToList();
+        }
     }
 }

@@ -30,5 +30,12 @@ namespace Md.Infrastructure.Data.Extensions
         {
             return collection[new Generate().RandomNumberBetween(0, collection.Count)];
         }
+
+        public static List<T> RandomItemsFrom<T>(this IList<T> collection, int numberOfItems)
+        {
+            var indexes = new Generate().RandomNumbersBetween(0, collection.Count, numberOfItems);
+            return indexes.Select(index => collection[index]).ToList();
+        }
+
     }
 }
