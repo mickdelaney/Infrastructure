@@ -19,10 +19,15 @@ namespace Md.Infrastructure.Mvc.Windsor
 
         protected override AuthorizationContext InvokeAuthorizationFilters(ControllerContext controllerContext, IList<IAuthorizationFilter> filters, ActionDescriptor actionDescriptor)
         {
-            foreach (var actionFilter in filters)
-                container.Kernel.InjectProperties(actionFilter);
-
+            filters.ToList().ForEach(container.Kernel.InjectProperties);
             return base.InvokeAuthorizationFilters(controllerContext, filters, actionDescriptor);
+        }
+
+        protected override ActionExecutedContext InvokeActionMethodWithFilters(ControllerContext controllerContext, IList<IActionFilter> filters,
+                ActionDescriptor actionDescriptor, IDictionary<string, object> parameters)
+        {
+            filters.ToList().ForEach(container.Kernel.InjectProperties);
+            return base.InvokeActionMethodWithFilters(controllerContext, filters, actionDescriptor, parameters);
         }
     }
 }
